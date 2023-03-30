@@ -1,5 +1,7 @@
 # Philipp Kerler
 
+![](kerler%20phillipp%2020220428_1.jpg)
+
 ## About
 
 Hi! I'm a phd candidate at the Department of Political Science (IPZ) at the University of Zürich (UZH) and the Center for Comparative and International Studies (CIS), ETH and UZH. My supervisor is Prof. Katherina Michaelowa.
