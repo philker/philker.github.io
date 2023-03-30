@@ -8,7 +8,7 @@ Being trained both in Political Science and Economics, I aspire to foster the gr
 
 ## Research
 
-###Working Papers
+### Working Papers
 [Sometimes the grass is greener on the other side: How terrorism affects preference for democracy](https://github.com/philker/Terrorism-and-preference-for-democracy-in-Africa/blob/master/Grass_is_greener_29_08_2022.pdf)
 
 I study how negative signals about states' capacity to provide security, i.e. terrorism, affect preference for democracy. I argue that negative signals affect preference formation differently conditional on how democratic a regime is perceived to be. Using interrupted surveys from several African countries, I show that preference for democracy increases in response to terrorist attacks. This effect is particularly pronounced among individuals who evaluate their state as undemocratic. Individuals who perceive their state as democratic show no adverse reaction towards democracy. The results provide a positive outlook on the resilience of preference for democracy in the face of adversity.
@@ -20,6 +20,7 @@ Can broadly targeted welfare policy create electoral dynamics similar to particu
 
 ### Policy
 [Stabile Demokratie in Krisenzeiten: Lokale Coronafälle haben bei der bayerischen Kommunalwahl die Wähler nicht abgeschreckt](file:///C:/Users/kerler/Downloads/ifoDD_20-03_07-10_Blesse.pdf)
+
 A short policy report - in German - about the impact of the first occurrences of Covid-19 during the municipal elections in Bavaria on electoral outcomes. Comparing changes of electoral outcomes within municipalities with and without Covid-19 cases, we do not find any evidence that voters were abstaining due to local Covid-19 incidence.
 
 Am 15. März 2020 fanden in Bayern die Kommunalwahlen statt – mitten in den Anfangswochen der Coronapandemie in Deutschland. In etwa einem Fünftel der bayerischen Landkreise gab es zu diesem Zeitpunkt aber noch keinen bestätigten Coronafall. Wir vergleichen das Wahlverhalten in diesen Landkreisen mit bayerischen Landkreisen, in denen bereits Corona nachgewiesen wurde. Unsere Ergebnisse deuten nicht darauf hin, dass lokale Coronafälle die Wahlbeteiligung negativ beeinflusst haben. Die Wähler haben sich nicht abschrecken lassen.
