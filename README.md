@@ -2,12 +2,11 @@
 
 
 ## About
-
+<img align="right" src="kerler%20phillipp%2020220428_1.jpg" width=30% height=30%>
 Hi! I'm a phd candidate at the Department of Political Science (IPZ) at the University of Zürich (UZH) and the Center for Comparative and International Studies (CIS), ETH and UZH. My supervisor is Prof. Katherina Michaelowa.
 
 Being trained both in Political Science and Economics, I aspire to foster the growing connection between both fields. My broader research area is best defined as Political Economy and Development. Methodologically, I like to work empirically, using quantitative data, and in theory building, I often resort to the rigorous language of mathematics to structure my thoughts. 
 
-<img align="right" src="kerler%20phillipp%2020220428_1.jpg" width=50% height=50%>
 
 ## Research
 
