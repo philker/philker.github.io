@@ -1,6 +1,6 @@
 # Philipp Kerler
 
-![](kerler%20phillipp%2020220428_1.jpg)
+![](kerler%20phillipp%2020220428_1.jpg  width="100" height="100")
 
 ## About
 
