@@ -48,6 +48,13 @@
         text-align: justify; /* Justify text for better readability */
       }
 
+      /* Flex container to align links horizontally */
+      .links-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+      }
     </style>
     <title>Philipp Kerler</title>
   </head>
@@ -64,7 +71,10 @@
     
     <p> </p>
     <hr>
-    <a href="research.html" class="amber-link"><h1>Research</h1></a> <a href="CV20241218.pdf" class="amber-link"><h2>CV</h2></a>
+    <div class="links-container">
+      <a href="research.html" class="amber-link"><h1>Research</h1></a>
+      <a href="CV20241218.pdf" class="amber-link"><h2>CV</h2></a>
+    </div>
     <p> </p>
 
     <hr>
