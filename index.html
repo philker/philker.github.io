@@ -23,7 +23,7 @@
       a:focus {
         color: #EB5406;
       }
-	  
+      
       .round-image {
         border-radius: 50%;
         overflow: hidden;
@@ -37,25 +37,37 @@
         height: auto;
       }
 
-      /* New class for the research area paragraph */
-      .research-area {
-        font-size: 16px; /* Reduce the font size */
-        text-align: justify; /* Justify text for better readability */
-      }
-
-      /* New class for the intro paragraph */
-      .intro {
-        text-align: justify; /* Justify text for better readability */
-      }
-
-      /* Flex container to align links horizontally with increased space */
-      .links-container {
+      /* New layout for two-column section */
+      .content-layout {
         display: flex;
-        justify-content: center;
-        gap: 120px; /* Increased gap for more space */
+        flex-direction: row;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      
+      .left-column {
+        flex: 2;
+        text-align: justify;
+      }
+
+      .right-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
+        gap: 20px;
+      }
+
+      .right-column a {
+        font-size: 20px;
+      }
+
+      hr {
+        margin: 20px 0;
       }
     </style>
+
     <title>Philipp Kerler</title>
   </head>
   <body>
@@ -63,20 +75,22 @@
     <div class="round-image">
       <img src="assets/kerler%20phillipp%2020220428_1.jpg" alt="Philipp Kerler">
     </div>
-	  
-    <div class="links-container">
-      <a href="research.html" class="amber-link"><h2>Research</h2></a>
-      <a href="CV20241218.pdf" class="amber-link"><h2>CV</h2></a>
-    </div>
-    
-<hr>
-	  
-    <p class="intro">Hi! I'm a post-doc at the Institute of Political Science (IPZ) at the University of Zürich (UZH). </p>
 
-    <!-- Apply the new class to this paragraph -->
-    <p class="research-area">My research area is Political Economy and Development. Recently, I started investigating the political effects of structural transformations, especially, how structural transformations relate to the rise of the radical right in the Global South. Structural economic explanations are at the heart of theories of the rise of the radical right in Europe and the US. Yet, we observe the same phenomenon in some of the largest democracies in the world, where structural transformations are vastly different from the US and Europe. In other ongoing work, I focus on issues related to political participation and accountability in the Global South. Beyond its intrinsic value, people having a political voice underpins the development of inclusive institutions, which are necessary to improve social welfare. I seek to contribute on theoretical and empirical grounds, as I believe in a strong complementarity between both. To structure my theoretical thinking, I often resort to formal modeling. In my empirical work, I use quantitative methods to analyze a wide range of data. Being trained in Political Science and Economics, I aspire to foster the growing connection between both fields.</p>
-    
-    <p> </p>
+    <hr>
+
+    <div class="content-layout">
+      <!-- Left column with research area text -->
+      <div class="left-column">
+        <p class="research-area">My research area is Political Economy and Development. Recently, I started investigating the political effects of structural transformations, especially, how structural transformations relate to the rise of the radical right in the Global South. Structural economic explanations are at the heart of theories of the rise of the radical right in Europe and the US. Yet, we observe the same phenomenon in some of the largest democracies in the world, where structural transformations are vastly different from the US and Europe. In other ongoing work, I focus on issues related to political participation and accountability in the Global South. Beyond its intrinsic value, people having a political voice underpins the development of inclusive institutions, which are necessary to improve social welfare. I seek to contribute on theoretical and empirical grounds, as I believe in a strong complementarity between both. To structure my theoretical thinking, I often resort to formal modeling. In my empirical work, I use quantitative methods to analyze a wide range of data. Being trained in Political Science and Economics, I aspire to foster the growing connection between both fields.</p>
+      </div>
+
+      <!-- Right column with links -->
+      <div class="right-column">
+        <a href="research.html" class="amber-link"><h2>Research</h2></a>
+        <a href="CV20241218.pdf" class="amber-link"><h2>CV</h2></a>
+      </div>
+    </div>
+
     <hr>
 
     <h3>Contact</h3>
@@ -84,3 +98,6 @@
       +41 44 634 24 57<br>
       philipp.kerler@uzh.ch<br>
       Affolternstrasse 56 805
+    </small>
+  </body>
+</html>
