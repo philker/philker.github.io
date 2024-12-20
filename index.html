@@ -63,6 +63,35 @@
         font-size: 20px;
       }
 
+      .header-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .header-left {
+        text-align: left;
+        flex: 2;
+      }
+
+      .header-left h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      .header-left p {
+        margin: 5px 0 0;
+        font-size: 16px;
+        color: #666;
+      }
+
+      .header-right {
+        flex: 1;
+        text-align: center;
+      }
+
       hr {
         margin: 20px 0;
       }
@@ -71,9 +100,19 @@
     <title>Philipp Kerler</title>
   </head>
   <body>
-    <h1>Philipp Kerler</h1>
-    <div class="round-image">
-      <img src="assets/kerler%20phillipp%2020220428_1.jpg" alt="Philipp Kerler">
+    <div class="header-layout">
+      <!-- Left column with name and title -->
+      <div class="header-left">
+        <h1>Philipp Kerler</h1>
+        <p>Post-doc at the Department of Political Science</p>
+      </div>
+
+      <!-- Right column with picture -->
+      <div class="header-right">
+        <div class="round-image">
+          <img src="assets/kerler%20phillipp%2020220428_1.jpg" alt="Philipp Kerler">
+        </div>
+      </div>
     </div>
 
     <hr>
