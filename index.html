@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Philipp Kerler">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
       body {
-        font-family: Helvetica, sans-serif;
-        text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
         max-width: 700px;
         margin: 0 auto;
-        font-size: 16px;
+        padding: 2rem 1.5rem;
+        color: #222;
       }
 
       a {
@@ -30,9 +34,8 @@
       .round-image {
         border-radius: 50%;
         overflow: hidden;
-        width: 200px;
-        height: 200px;
-        margin: 0 auto; 
+        width: 160px;
+        height: 160px;
       }
 
       .round-image img {
@@ -46,7 +49,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 20px;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
       }
 
       .header-left {
@@ -55,41 +59,74 @@
       }
 
       .header-left h1 {
-        margin: 0;
-        font-size: 60px;
+        font-family: 'Lora', serif;
+        font-weight: 500;
+        margin: 0 0 0.4rem;
+        font-size: 52px;
+        line-height: 1.1;
       }
 
-      .header-left p {
-        margin: 5px 0 0;
-        font-size: 16px;
-        color: #666;
+      .header-left .subtitle {
+        margin: 0 0 0.75rem;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      .header-left small {
+        font-size: 13px;
+        color: #888;
+        line-height: 1.7;
+        display: block;
       }
 
       .header-right {
-        flex: 1;
+        flex: 0 0 160px;
         text-align: center;
       }
 
       hr {
-        margin: 20px 0;
+        border: none;
+        border-top: 0.5px solid #ddd;
+        margin: 1.25rem 0;
       }
 
-      /* New horizontal navigation below HR */
       .nav-links {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
-        margin: 20px 0;
+        gap: 0.75rem;
+        margin: 1rem 0;
       }
 
-      .nav-links a h2 {
-        font-size: 22px;
-        margin: 0;
+      .nav-links a {
+        font-size: 14px;
+        font-weight: 500;
+        color: #222;
+        padding: 6px 16px;
+        border: 0.5px solid #bbb;
+        border-radius: 99px;
       }
 
-      /* Make text full width */
+      .nav-links a:hover {
+        background: #f5f5f5;
+        color: #EB5406;
+        border-color: #EB5406;
+      }
+
       .text-section {
-        text-align: justify;
+        text-align: left;
+        line-height: 1.75;
+      }
+
+      .text-section p {
+        margin-bottom: 1rem;
+      }
+
+      .text-section p:first-child {
+        font-family: 'Lora', serif;
+        font-size: 17px;
+        color: #666;
       }
     </style>
 
@@ -99,12 +136,13 @@
     <div class="header-layout">
       <div class="header-left">
         <h1>Philipp Kerler</h1>
-        <p>Post-doc at the Department of Political Science (IPZ)</p>
-        <p>University of Zürich</p>
+        <div class="subtitle">
+          Post-doc, Department of Political Science (IPZ)<br>
+          University of Zürich
+        </div>
         <small>
-          philipp.kerler@uzh.ch<br>
-          Affolternstrasse 56 8050 Zürich<br>
-          Office AFL-H-342
+          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="13637b7a7f7a63633d7876617f76615366697b3d707b">[email&#160;protected]</a><br>
+          Affolternstrasse 56, 8050 Zürich · AFL-H-342
         </small>
       </div>
 
@@ -117,37 +155,29 @@
 
     <hr>
 
-    <!-- New horizontal nav bar -->
     <div class="nav-links">
-      <a href="research.html"><h2>Research</h2></a>
-      <a href="CV_nov13.pdf"><h2>CV</h2></a>
-      <a href="PEFRSGSv2+(3) (1).pdf"><h2>Seminar</h2></a>
+      <a href="research.html">Research</a>
+      <a href="CV_nov13.pdf">CV</a>
+      <a href="PEFRSGSv2+(3) (1).pdf">Seminar</a>
     </div>
 
     <hr>
 
-    <!-- Full-width text -->
     <div class="text-section">
       <p>Welcome!</p>
-      <p>I do research in Political Economy and Development.</p>
+      <p>I am interested in the broad field of Political Economy and Development.</p>
       <p>
-        Currently, I focus on the political effects of structural transformations, 
-        especially how structural transformations relate to the rise of the far-right in non-WEIRD (Western Educated Industrialized Rich Democratic) countries. 
-        Structural economic explanations are at the heart of theories explaining the rise of the far right in advanced Western democracies. 
-        Yet, we observe the same phenomenon in some of the largest democracies in the world,
-        where structural transformations are significantly different from, e.g., Europe or the US.  
+        Currently, I focus on the political effects of structural transformations —
+        especially how they relate to the rise of the far right in non-WEIRD
+        (Western Educated Industrialized Rich Democratic) countries. Structural economic
+        explanations are at the heart of theories explaining this phenomenon in advanced
+        Western democracies, yet we observe the same political outcomes in some of the largest
+        democracies in the world, where structural transformations look quite different
+        from those in Europe or the US.
       </p>
-      <p>
-        In other ongoing work, I focus on political participation and accountability issues in the Global South. 
-        Beyond its intrinsic value, people having a political voice underpins the development of inclusive institutions 
-        necessary to improve social welfare.
-      </p>
-      <p>
-        I seek to contribute on theoretical and empirical grounds, as I believe in a strong complementarity between both. 
-        To structure my theoretical thinking, I often resort to formal modeling. In my empirical work, I use quantitative 
-        methods to analyze a wide range of data. Being trained in Political Science and Economics, I aspire to foster the 
-        growing connection between both fields.
-      </p>
-    </div>
-  </body>
-</html>
+          <p>
+        I seek to contribute on theoretical and empirical grounds, as I believe in a
+        strong complementarity between both. To structure my theoretical thinking, I
+        often resort to formal modeling. In my empirical work, I use quantitative methods
+        to analyze a wide range of data. Being trained in Political Science and Economics, I aspire to foster the growing connection between both fields 
+                     <p>
