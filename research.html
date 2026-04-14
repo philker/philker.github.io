@@ -84,6 +84,49 @@
         border-top: 0.5px solid #ddd;
         margin: 1.25rem 0;
       }
+
+      /* Abstract toggle button — matches index pill style */
+      .abstract-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 0.4rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: #222;
+        background: none;
+        border: 0.5px solid #bbb;
+        border-radius: 99px;
+        padding: 4px 12px;
+        cursor: pointer;
+        transition: color 0.15s, border-color 0.15s;
+      }
+
+      .abstract-toggle:hover {
+        color: #EB5406;
+        border-color: #EB5406;
+      }
+
+      .abstract-toggle .arrow {
+        display: inline-block;
+        font-size: 9px;
+        transition: transform 0.2s ease;
+        margin-top: 1px;
+      }
+
+      .abstract-toggle.open .arrow {
+        transform: rotate(180deg);
+      }
+
+      .abstract-body {
+        display: none;
+        margin-top: 0.5rem;
+      }
+
+      .abstract-body.open {
+        display: block;
+      }
     </style>
 
     <title>Research — Philipp Kerler</title>
@@ -97,14 +140,20 @@
     <div class="paper">
       <p class="paper-title"><a href="https://journals.sagepub.com/doi/10.1177/09516298241312347">Distributive politics and asymmetric participation</a> (with Victor Araújo)</p>
       <p class="paper-venue">Journal of Theoretical Politics 37(3), 179–208.</p>
-      <p class="paper-abstract">How do distributive politics affect participation under incomplete information? We theorize a novel mechanism that we call asymmetric participation, which explains participation as a self-selection process induced by a broadly targeted welfare benefit. Incomplete information about the de facto allocation of benefits causes asymmetric participation. When citizens expect particularistic distribution and access to the benefit depends on voter registration, supporters of the incumbent, who supplies the benefit, self-select into the electorate. This creates an incumbency advantage. We illustrate this argument using the case of the Renda Básica de Cidadania (RBC) in Maricá, Brazil, the largest unconditional cash transfer program in Latin America. Based on qualitative evidence, we develop a formal model, which we test against novel survey data. We find that under the de facto procedure of implementation, supporters of the incumbent supplying the RBC self-select into the electorate, and engage more in activities that signal party loyalty.</p>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
+      <div class="abstract-body">
+        <p class="paper-abstract">How do distributive politics affect participation under incomplete information? We theorize a novel mechanism that we call asymmetric participation, which explains participation as a self-selection process induced by a broadly targeted welfare benefit. Incomplete information about the de facto allocation of benefits causes asymmetric participation. When citizens expect particularistic distribution and access to the benefit depends on voter registration, supporters of the incumbent, who supplies the benefit, self-select into the electorate. This creates an incumbency advantage. We illustrate this argument using the case of the Renda Básica de Cidadania (RBC) in Maricá, Brazil, the largest unconditional cash transfer program in Latin America. Based on qualitative evidence, we develop a formal model, which we test against novel survey data. We find that under the de facto procedure of implementation, supporters of the incumbent supplying the RBC self-select into the electorate, and engage more in activities that signal party loyalty.</p>
+      </div>
     </div>
 
     <div class="paper">
       <p class="paper-title"><a href="https://rdcu.be/ePBfV">How terrorism affects support for democracy</a></p>
       <p class="paper-venue">Public Choice. Online first.</p>
       <p class="paper-note">Previously circulated under "Sometimes the grass is greener on the other side: How terrorism affects preference for democracy"</p>
-      <p class="paper-abstract">Concerns that terrorist attacks reduce citizens' support for democracy and hinder democratization are widespread. Contrary to these concerns, we show that reported support for democracy is not lower after terrorist attacks across 10 cases of unexpected events during surveys in 10 African countries. In three cases, we detect significantly higher support for democracy after attacks. Jointly analyzing the 10 cases reveals that particularly respondents who evaluate their state as undemocratic report more support for democracy after attacks. Among individuals who perceive their state as democratic, we find no difference in support for democracy. Trust in the president and the ruling party is generally lower after attacks. We propose that citizens respond adversely to limited capacities to express dissatisfaction with the government under perceived non-democratic rule, and thus support democracy more after terrorist attacks when the political system is perceived as undemocratic. In contrast to prior research, our results provide a positive outlook on the resilience of support for democracy in the face of adversity.</p>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
+      <div class="abstract-body">
+        <p class="paper-abstract">Concerns that terrorist attacks reduce citizens' support for democracy and hinder democratization are widespread. Contrary to these concerns, we show that reported support for democracy is not lower after terrorist attacks across 10 cases of unexpected events during surveys in 10 African countries. In three cases, we detect significantly higher support for democracy after attacks. Jointly analyzing the 10 cases reveals that particularly respondents who evaluate their state as undemocratic report more support for democracy after attacks. Among individuals who perceive their state as democratic, we find no difference in support for democracy. Trust in the president and the ruling party is generally lower after attacks. We propose that citizens respond adversely to limited capacities to express dissatisfaction with the government under perceived non-democratic rule, and thus support democracy more after terrorist attacks when the political system is perceived as undemocratic. In contrast to prior research, our results provide a positive outlook on the resilience of support for democracy in the face of adversity.</p>
+      </div>
     </div>
 
     <hr>
@@ -113,39 +162,61 @@
     <div class="paper">
       <p class="paper-title"><a href="https://github.com/philker/Accountability-despite-misinformation/blob/main/lies_can_backfire_kerler_araujo.pdf">Lies can backfire: How exposure of government dishonesty restores accountability despite misinformation</a> (with Victor Araújo)</p>
       <p class="paper-venue">R&R at European Journal of Political Economy</p>
-      <p class="paper-abstract">Do voters punish rulers who spread misinformation when confronted with the truth? We address this question through the lens of the Covid-19 pandemic in Brazil. Despite a massive misinformation campaign in an already polarized society, Bolsonaro lost the elections in 2022. We argue that markers of the true state of the world, i.e., unambiguous evidence that contradicts governmental misinformation, expose the government as dishonest. Since citizens dislike dishonest politicians, misinformation can backfire electorally. We show that voters in polling stations closer to hospitals with more intensive care units (ICUs), which proxy for salient markers of the true state of the world, punished Bolsonaro more in the 2022 Presidential Election. The effect is sizeable — if information exposure had been 5 points lower (on a 10-point scale) the election result would be flipped.</p>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
+      <div class="abstract-body">
+        <p class="paper-abstract">Do voters punish rulers who spread misinformation when confronted with the truth? We address this question through the lens of the Covid-19 pandemic in Brazil. Despite a massive misinformation campaign in an already polarized society, Bolsonaro lost the elections in 2022. We argue that markers of the true state of the world, i.e., unambiguous evidence that contradicts governmental misinformation, expose the government as dishonest. Since citizens dislike dishonest politicians, misinformation can backfire electorally. We show that voters in polling stations closer to hospitals with more intensive care units (ICUs), which proxy for salient markers of the true state of the world, punished Bolsonaro more in the 2022 Presidential Election. The effect is sizeable — if information exposure had been 5 points lower (on a 10-point scale) the election result would be flipped.</p>
+      </div>
     </div>
 
     <div class="paper">
       <p class="paper-title">Seeds of change: Structural Transformations and Support for the Radical Right (with David Doyle)</p>
       <p class="paper-venue">Draft available on request.</p>
-      <p class="paper-abstract">The rise of the radical right is often attributed to economic disappointments rooted in structural transformations. However, these explanations frequently fail to extend beyond advanced democracies, where most structural changes differ. To advance the limited understanding of the political effects of structural transformations in countries of the Global South, we study the shift to high-intensity agricultural production in Brazil in the early 2000s. We argue that — similar to developments in advanced democracies — left majoritarian parties (in this case the Brazilian Workers' Party, PT) losing the support of those left behind by structural change contributed significantly to Jair Bolsonaro's rise to power. At the same time, Bolsonaro's economically liberal appeals resonated with workers embedded in increasingly industrialized, export-oriented agriculture. Therefore, Bolsonaro garnered support from the winners and losers of structural transformation simultaneously. This highlights the role of economic liberalist appeals distinct to the radical right in the Global South.</p>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
+      <div class="abstract-body">
+        <p class="paper-abstract">The rise of the radical right is often attributed to economic disappointments rooted in structural transformations. However, these explanations frequently fail to extend beyond advanced democracies, where most structural changes differ. To advance the limited understanding of the political effects of structural transformations in countries of the Global South, we study the shift to high-intensity agricultural production in Brazil in the early 2000s. We argue that — similar to developments in advanced democracies — left majoritarian parties (in this case the Brazilian Workers' Party, PT) losing the support of those left behind by structural change contributed significantly to Jair Bolsonaro's rise to power. At the same time, Bolsonaro's economically liberal appeals resonated with workers embedded in increasingly industrialized, export-oriented agriculture. Therefore, Bolsonaro garnered support from the winners and losers of structural transformation simultaneously. This highlights the role of economic liberalist appeals distinct to the radical right in the Global South.</p>
+      </div>
     </div>
 
     <hr>
-	<h2>Book Contributions</h2>
-	     <div class="paper">
+    <h2>Book Contributions</h2>
+
+    <div class="paper">
       <p class="paper-title">The far-right in Latin America: Between illiberalism and neoliberalism</p>
       <p class="paper-venue">Chapter in edited volume (eds.: Gudrun Hentges, Jörg Flecker, Ruth Wodak, Elke Gaugele, and Georg Gläser; Springer). Draft available on request.</p>
     </div>
-	  <hr>
+
+    <hr>
     <h2>Work in Progress</h2>
 
     <div class="paper">
       <p class="paper-title">The right angle: Urban structures, social ties, and voting behavior in Serbia (with Valentina Petrović)</p>
       <p class="paper-venue">Draft in progress.</p>
-      <p class="paper-abstract">The rise of the far-right into the political mainstream is a defining political phenomenon of the early 21st century. Many explanations for this phenomenon center around narratives of economic decline, where the far-right can profit from economic disappointment. Only recently have scholars started to scrutinize the electoral consequences of economic developments that preceded economic decline. Yet, the mechanisms that map structural economic processes over longer time periods to contemporary outcomes are only partially understood. This research focuses on built environments, the physical representation of structural economic change. How do structures sort societies and shape attitudes? To understand this intricate connection, we study the case of Trstenik, a small town in rural Serbia, which is home to Prva Petoletka, a large manufacturing firm established during the Socialist Federal Republic of Yugoslavia. The establishment of the firm introduced radical shifts in the town's built environment. We aim to understand how the experience of this change on the neighborhood level shaped sorting, social ties, and ultimately voting behavior today, contributing to ongoing discussions about the political effects of structural change and industrial legacies.</p>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
+      <div class="abstract-body">
+        <p class="paper-abstract">The rise of the far-right into the political mainstream is a defining political phenomenon of the early 21st century. Many explanations for this phenomenon center around narratives of economic decline, where the far-right can profit from economic disappointment. Only recently have scholars started to scrutinize the electoral consequences of economic developments that preceded economic decline. Yet, the mechanisms that map structural economic processes over longer time periods to contemporary outcomes are only partially understood. This research focuses on built environments, the physical representation of structural economic change. How do structures sort societies and shape attitudes? To understand this intricate connection, we study the case of Trstenik, a small town in rural Serbia, which is home to Prva Petoletka, a large manufacturing firm established during the Socialist Federal Republic of Yugoslavia. The establishment of the firm introduced radical shifts in the town's built environment. We aim to understand how the experience of this change on the neighborhood level shaped sorting, social ties, and ultimately voting behavior today, contributing to ongoing discussions about the political effects of structural change and industrial legacies.</p>
+      </div>
     </div>
 
- 
     <hr>
     <h2>Policy Papers</h2>
 
     <div class="paper">
       <p class="paper-title"><a href="https://www.ifo.de/publikationen/2020/aufsatz-zeitschrift/stabile-demokratie-krisenzeiten-lokale-coronafaelle-haben">Stabile Demokratie in Krisenzeiten: Lokale Coronafälle haben bei der bayerischen Kommunalwahl die Wähler nicht abgeschreckt</a> (with Sebastian Blesse and Felix Rösel, ifo Dresden berichtet 3/2020)</p>
-      <p class="paper-abstract">A short policy report — in German — about the impact of the first occurrences of Covid-19 during the municipal elections in Bavaria on electoral outcomes. Comparing changes of electoral outcomes within municipalities with and without Covid-19 cases, we do not find any evidence that voters were abstaining due to local Covid-19 incidence.</p>
-      <p class="paper-abstract" style="margin-top: 0.5rem;">Am 15. März 2020 fanden in Bayern die Kommunalwahlen statt – mitten in den Anfangswochen der Coronapandemie in Deutschland. In etwa einem Fünftel der bayerischen Landkreise gab es zu diesem Zeitpunkt aber noch keinen bestätigten Coronafall. Wir vergleichen das Wahlverhalten in diesen Landkreisen mit bayerischen Landkreisen, in denen bereits Corona nachgewiesen wurde. Unsere Ergebnisse deuten nicht darauf hin, dass lokale Coronafälle die Wahlbeteiligung negativ beeinflusst haben. Die Wähler haben sich nicht abschrecken lassen.</p>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
+      <div class="abstract-body">
+        <p class="paper-abstract">A short policy report — in German — about the impact of the first occurrences of Covid-19 during the municipal elections in Bavaria on electoral outcomes. Comparing changes of electoral outcomes within municipalities with and without Covid-19 cases, we do not find any evidence that voters were abstaining due to local Covid-19 incidence.</p>
+        <p class="paper-abstract" style="margin-top: 0.5rem;">Am 15. März 2020 fanden in Bayern die Kommunalwahlen statt – mitten in den Anfangswochen der Coronapandemie in Deutschland. In etwa einem Fünftel der bayerischen Landkreise gab es zu diesem Zeitpunkt aber noch keinen bestätigten Coronafall. Wir vergleichen das Wahlverhalten in diesen Landkreisen mit bayerischen Landkreisen, in denen bereits Corona nachgewiesen wurde. Unsere Ergebnisse deuten nicht darauf hin, dass lokale Coronafälle die Wahlbeteiligung negativ beeinflusst haben. Die Wähler haben sich nicht abschrecken lassen.</p>
+      </div>
     </div>
+
+    <script>
+      function toggleAbstract(btn) {
+        const body = btn.nextElementSibling;
+        const isOpen = body.classList.contains('open');
+        body.classList.toggle('open', !isOpen);
+        btn.classList.toggle('open', !isOpen);
+      }
+    </script>
 
   </body>
 </html>
