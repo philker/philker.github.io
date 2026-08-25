@@ -61,6 +61,9 @@
         border: none;
         border-top: 1px solid #cfcfcf;
       }
+      .rule--narrow {
+        width: calc((100% - 8 * var(--col-gap)) / 9 * 7 + 6 * var(--col-gap));
+      }
 
       /* ---------- Masthead ---------- */
       .masthead {
@@ -96,14 +99,14 @@
       .nav a {
         grid-row: 1;
         justify-self: start;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.04em;
       }
       .nav a:nth-child(1) { grid-column: 1 / 4; }
       .nav a:nth-child(2) { grid-column: 4 / 6; }
-      .nav a:nth-child(3) { grid-column: 6 / 9; }
+      .nav a:nth-child(3) { grid-column: 6 / 8; }
 
       /* ---------- Content ---------- */
       .content {
@@ -222,6 +225,7 @@
         .nav a:nth-child(2),
         .nav a:nth-child(3) { grid-column: 1 / -1; grid-row: auto; }
         .nav { row-gap: 10px; }
+        .rule--narrow { width: 100%; }
       }
     </style>
   </head>
@@ -233,7 +237,7 @@
         <h1 class="page-title">Research</h1>
       </div>
 
-      <hr class="rule">
+      <hr class="rule rule--narrow">
 
       <nav class="grid nav">
         <a href="index.html">Home</a>
@@ -241,7 +245,7 @@
         <a href="PEFRSGSv2+(3) (1).pdf">Seminar</a>
       </nav>
 
-      <hr class="rule">
+      <hr class="rule rule--narrow">
 
       <div class="grid content">
         <div class="col">
