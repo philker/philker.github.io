@@ -1,238 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="author" content="Philipp Kerler">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter:ital@0;1&display=swap" rel="stylesheet">
+    <title>Research &mdash; Philipp Kerler</title>
     <style>
+      :root {
+        --red: #D6401E;
+        --ink: #111111;
+        --line: #111111;
+        --paper: #FDFDFC;
+        --col-gap: 20px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { -webkit-text-size-adjust: 100%; }
+
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 15px;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem;
-        color: #222;
-        line-height: 1.75;
+        line-height: 1.5;
+        color: var(--ink);
+        background: var(--paper);
+        margin: 0;
+        padding: 0;
       }
 
       a {
+        color: var(--ink);
         text-decoration: none;
-        color: #EB5406;
+      }
+      a:hover { color: var(--red); }
+      a:focus { color: var(--red); }
+
+      /* ---------- Grid shell ---------- */
+      .sheet {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 40px 32px 64px;
       }
 
-      a:hover {
-        color: #40484A;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        column-gap: var(--col-gap);
       }
 
-      a:focus {
-        color: #EB5406;
+      .rule {
+        grid-column: 1 / -1;
+        border: none;
+        border-top: 3px solid var(--line);
+        margin: 0;
+      }
+      .rule--thin {
+        border: none;
+        border-top: 1px solid #cfcfcf;
       }
 
-      .breadcrumb {
+      /* ---------- Masthead ---------- */
+      .masthead {
+        padding: 36px 0 28px;
+        align-items: start;
+        row-gap: 14px;
+      }
+
+      .crumb {
+        grid-column: 1 / 7;
         font-size: 13px;
-        color: #888;
-        margin-bottom: 2.5rem;
-      }
-
-      h2 {
-        font-family: 'Lora', serif;
-        font-weight: 500;
-        font-size: 22px;
-        text-align: left;
-        margin: 2.5rem 0 0.5rem;
-        color: #222;
-      }
-
-      h2:first-of-type {
-        margin-top: 0;
-      }
-
-      h3 {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        font-size: 13px;
-        letter-spacing: 0.08em;
+        font-weight: 700;
         text-transform: uppercase;
-        color: #888;
-        margin: 1.5rem 0 0.75rem;
-        border-bottom: 0.5px solid #ddd;
-        padding-bottom: 0.4rem;
+        letter-spacing: 0.06em;
+        margin: 0;
+      }
+      .crumb .arrow { display: inline-block; margin-right: 4px; }
+
+      .page-title {
+        grid-column: 1 / 7;
+        font-size: clamp(40px, 6vw, 64px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 0.98;
+        margin: 0;
       }
 
-      .paper {
-        margin-bottom: 2rem;
+      /* ---------- Nav ---------- */
+      .nav {
+        padding: 18px 0;
+        align-items: baseline;
       }
+      .nav a {
+        grid-row: 1;
+        justify-self: start;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .nav a:nth-child(1) { grid-column: 1 / 4; }
+      .nav a:nth-child(2) { grid-column: 4 / 6; }
+      .nav a:nth-child(3) { grid-column: 6 / 9; }
+
+      /* ---------- Content ---------- */
+      .content {
+        padding-top: 36px;
+      }
+
+      .col {
+        grid-column: 1 / 8;
+      }
+
+      .section {
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin: 0 0 20px;
+      }
+      .section-block { margin-top: 44px; }
+      .section-block:first-child { margin-top: 0; }
+
+      .subsection {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 28px 0 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #cfcfcf;
+      }
+      .subsection:first-of-type { margin-top: 0; }
+
+      .paper { margin-bottom: 28px; }
+      .paper:last-child { margin-bottom: 0; }
 
       .paper-title {
-        font-weight: 500;
         font-size: 15px;
-        margin-bottom: 0.2rem;
+        font-weight: 600;
+        line-height: 1.5;
+        margin: 0 0 3px;
       }
 
       .paper-venue {
-        font-style: italic;
         font-size: 13px;
-        color: #666;
-        margin-bottom: 0.25rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--ink);
+        margin: 0 0 2px;
       }
 
       .paper-note {
         font-size: 13px;
-        color: #888;
-        margin-bottom: 0.5rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--ink);
+        margin: 0 0 4px;
       }
 
       .paper-abstract {
         font-size: 14px;
-        color: #444;
-        text-align: left;
+        line-height: 1.7;
+        color: var(--ink);
+        margin: 0;
       }
+      .paper-abstract + .paper-abstract { margin-top: 8px; }
 
-      hr {
-        border: none;
-        border-top: 0.5px solid #ddd;
-        margin: 1.25rem 0;
-      }
-
-      /* Abstract toggle button — matches index pill style */
+      /* Abstract toggle */
       .abstract-toggle {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        margin-top: 0.4rem;
-        font-family: 'Inter', sans-serif;
-        font-size: 13px;
-        font-weight: 500;
-        color: #222;
+        gap: 6px;
+        margin-top: 6px;
+        font-family: inherit;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ink);
         background: none;
-        border: 0.5px solid #bbb;
-        border-radius: 99px;
-        padding: 4px 12px;
+        border: none;
+        padding: 0;
         cursor: pointer;
-        transition: color 0.15s, border-color 0.15s;
       }
-
-      .abstract-toggle:hover {
-        color: #EB5406;
-        border-color: #EB5406;
-      }
-
+      .abstract-toggle:hover { color: var(--red); }
       .abstract-toggle .arrow {
         display: inline-block;
         font-size: 9px;
         transition: transform 0.2s ease;
-        margin-top: 1px;
       }
-
-      .abstract-toggle.open .arrow {
-        transform: rotate(180deg);
-      }
+      .abstract-toggle.open .arrow { transform: rotate(180deg); }
 
       .abstract-body {
         display: none;
-        margin-top: 0.5rem;
+        margin-top: 10px;
+      }
+      .abstract-body.open { display: block; }
+
+      /* ---------- Footer ---------- */
+      .footer {
+        padding-top: 40px;
+        margin-top: 56px;
+      }
+      .footer .rule--thin { margin-bottom: 16px; }
+      .footer p {
+        grid-column: 1 / -1;
+        font-size: 11px;
+        color: var(--ink);
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
       }
 
-      .abstract-body.open {
-        display: block;
+      /* ---------- Responsive ---------- */
+      @media (max-width: 640px) {
+        .sheet { padding: 24px 20px 48px; }
+        .crumb, .page-title, .col { grid-column: 1 / -1; }
+        .nav a:nth-child(1),
+        .nav a:nth-child(2),
+        .nav a:nth-child(3) { grid-column: 1 / -1; grid-row: auto; }
+        .nav { row-gap: 10px; }
       }
     </style>
-
-    <title>Research — Philipp Kerler</title>
   </head>
   <body>
+    <div class="sheet">
 
-    <div class="breadcrumb"><a href="index.html">Home</a> / Research</div>
-
-    <h2>Publications</h2>
-
-    <h3>Peer-reviewed articles</h3>
-
-    <div class="paper">
-      <p class="paper-title"><a href="https://journals.sagepub.com/doi/10.1177/09516298241312347">Distributive politics and asymmetric participation</a> (with Victor Araújo)</p>
-      <p class="paper-venue">Journal of Theoretical Politics (2025) 37(3), 179–208.</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">How do distributive politics affect participation under incomplete information? We theorize a novel mechanism that we call asymmetric participation, which explains participation as a self-selection process induced by a broadly targeted welfare benefit. Incomplete information about the de facto allocation of benefits causes asymmetric participation. When citizens expect particularistic distribution and access to the benefit depends on voter registration, supporters of the incumbent, who supplies the benefit, self-select into the electorate. This creates an incumbency advantage. We illustrate this argument using the case of the Renda Básica de Cidadania (RBC) in Maricá, Brazil, the largest unconditional cash transfer program in Latin America. Based on qualitative evidence, we develop a formal model, which we test against novel survey data. We find that under the de facto procedure of implementation, supporters of the incumbent supplying the RBC self-select into the electorate, and engage more in activities that signal party loyalty.</p>
+      <div class="grid masthead">
+        <p class="crumb"><a href="index.html"><span class="arrow">&larr;</span>Philipp Kerler</a></p>
+        <h1 class="page-title">Research</h1>
       </div>
-    </div>
 
-    <div class="paper">
-      <p class="paper-title"><a href="https://rdcu.be/ePBfV">How terrorism affects support for democracy</a></p>
-      <p class="paper-venue">Public Choice (2025) Online first.</p>
-      <p class="paper-note">Previously circulated under "Sometimes the grass is greener on the other side: How terrorism affects preference for democracy"</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">Concerns that terrorist attacks reduce citizens' support for democracy and hinder democratization are widespread. Contrary to these concerns, we show that reported support for democracy is not lower after terrorist attacks across 10 cases of unexpected events during surveys in 10 African countries. In three cases, we detect significantly higher support for democracy after attacks. Jointly analyzing the 10 cases reveals that particularly respondents who evaluate their state as undemocratic report more support for democracy after attacks. Among individuals who perceive their state as democratic, we find no difference in support for democracy. Trust in the president and the ruling party is generally lower after attacks. We propose that citizens respond adversely to limited capacities to express dissatisfaction with the government under perceived non-democratic rule, and thus support democracy more after terrorist attacks when the political system is perceived as undemocratic. In contrast to prior research, our results provide a positive outlook on the resilience of support for democracy in the face of adversity.</p>
+      <hr class="rule">
+
+      <nav class="grid nav">
+        <a href="index.html">Home</a>
+        <a href="assets/CV_25082026.pdf">CV</a>
+        <a href="PEFRSGSv2+(3) (1).pdf">Seminar</a>
+      </nav>
+
+      <hr class="rule">
+
+      <div class="grid content">
+        <div class="col">
+
+          <div class="section-block">
+            <h2 class="section">Publications</h2>
+
+            <h3 class="subsection">Peer-reviewed articles</h3>
+            <div class="paper">
+              <p class="paper-title"><a href="https://journals.sagepub.com/doi/10.1177/09516298241312347">Distributive politics and asymmetric participation</a> (with Victor Ara&uacute;jo)</p>
+              <p class="paper-venue">Journal of Theoretical Politics (2025) 37(3), 179&ndash;208.</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">How do distributive politics affect participation under incomplete information? We theorize a novel mechanism that we call asymmetric participation, which explains participation as a self-selection process induced by a broadly targeted welfare benefit. Incomplete information about the de facto allocation of benefits causes asymmetric participation. When citizens expect particularistic distribution and access to the benefit depends on voter registration, supporters of the incumbent, who supplies the benefit, self-select into the electorate. This creates an incumbency advantage. We illustrate this argument using the case of the Renda B&aacute;sica de Cidadania (RBC) in Maric&aacute;, Brazil, the largest unconditional cash transfer program in Latin America. Based on qualitative evidence, we develop a formal model, which we test against novel survey data. We find that under the de facto procedure of implementation, supporters of the incumbent supplying the RBC self-select into the electorate, and engage more in activities that signal party loyalty.</p>
+              </div>
+            </div>
+            <div class="paper">
+              <p class="paper-title"><a href="https://rdcu.be/ePBfV">How terrorism affects support for democracy</a></p>
+              <p class="paper-venue">Public Choice (2025) Online first.</p>
+              <p class="paper-note">Previously circulated under &ldquo;Sometimes the grass is greener on the other side: How terrorism affects preference for democracy&rdquo;</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">Concerns that terrorist attacks reduce citizens' support for democracy and hinder democratization are widespread. Contrary to these concerns, we show that reported support for democracy is not lower after terrorist attacks across 10 cases of unexpected events during surveys in 10 African countries. In three cases, we detect significantly higher support for democracy after attacks. Jointly analyzing the 10 cases reveals that particularly respondents who evaluate their state as undemocratic report more support for democracy after attacks. Among individuals who perceive their state as democratic, we find no difference in support for democracy. Trust in the president and the ruling party is generally lower after attacks. We propose that citizens respond adversely to limited capacities to express dissatisfaction with the government under perceived non-democratic rule, and thus support democracy more after terrorist attacks when the political system is perceived as undemocratic. In contrast to prior research, our results provide a positive outlook on the resilience of support for democracy in the face of adversity.</p>
+              </div>
+            </div>
+
+            <h3 class="subsection">Book contributions</h3>
+            <div class="paper">
+              <p class="paper-title">The far right in Latin America: Between political illiberalism and neoliberalism</p>
+              <p class="paper-venue">Forthcoming chapter in edited volume (2026) &ldquo;Handbuch Radikale und Populistische Rechte&rdquo; (eds.: J&ouml;rg Flecker, Elke Gaugele, Georg Gl&auml;ser, Gudrun Hentges and Ruth Wodak; Springer). Draft available on request. <a href="supplement_far_right_in_latam.html">Online supplement &#8599;</a></p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">This chapter argues that the rise of the far right is a global phenomenon. It characterizes far-right rhetoric, policy positions, and ideologies through a comparative lens, focusing on Latin America against the backdrop of the United States and Europe. It proposes a group-based model of far-right politics, in which the far right is understood as the political representation of dominant socio-cultural in-groups that antagonize out-groups. Since illiberalism, i.e., the rejection of pluralism, consolidates the social dominance of the in-group, it is the universal constitutive feature of the far right across contexts. Other common ideological traits of the far right, such as nativism, nationalism, conservatism, xenophobia, religious fundamentalism, or anti-elitism, divide the in-group from out-groups but depend on context. Further, instrumental characteristics, e.g., authoritarianism, law and order, economic liberalism, and militarism, preserve or foster in-group dominance, but manifest differently depending on the group divide. The group perspective thus resolves apparent contradictions opposing a global view on the far-right phenomenon. For example, it is not contradictory that far-right politicians in Latin America are economically liberal and pro-trade, while their US counterparts impose sweeping tariffs. Both cases follow the same illiberal logic, yet the differing interests of the socio-cultural in-group shape the choice of instrumental policy paradigms.</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="rule--thin">
+
+          <div class="section-block">
+            <h2 class="section">Working Papers</h2>
+            <div class="paper">
+              <p class="paper-title"><a href="https://ssrn.com/abstract=6209232">Gripezinha: Evidence for retrospective voting amid government misinformation</a> (with Victor Ara&uacute;jo)</p>
+              <p class="paper-venue">R&amp;R at European Journal of Political Economy</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">Do voters punish rulers who spread misinformation when confronted with the truth? We address this question through the lens of the Covid-19 pandemic in Brazil. Despite a massive misinformation campaign in an already polarized society, Bolsonaro lost the elections in 2022. We argue that markers of the true state of the world, i.e., unambiguous evidence that contradicts governmental misinformation, expose the government as dishonest. Since citizens dislike dishonest politicians, misinformation can backfire electorally. We show that voters in polling stations closer to hospitals with more intensive care units (ICUs), which proxy for salient markers of the true state of the world, punished Bolsonaro more in the 2022 Presidential Election. The effect is sizeable &mdash; if information exposure had been 5 points lower (on a 10-point scale) the election result would be flipped.</p>
+              </div>
+            </div>
+            <div class="paper">
+              <p class="paper-title">Seeds of change: Structural Transformations and Support for the Radical Right (with David Doyle and Victor Ara&uacute;jo)</p>
+              <p class="paper-venue">Draft available on request.</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">The rise of the radical right is often attributed to economic disappointments rooted in structural transformations. However, these explanations frequently fail to extend beyond advanced democracies, where most structural changes differ. To advance the limited understanding of the political effects of structural transformations in countries of the Global South, we study the shift to high-intensity agricultural production in Brazil in the early 2000s. We argue that &mdash; similar to developments in advanced democracies &mdash; left majoritarian parties (in this case the Brazilian Workers' Party, PT) losing the support of those left behind by structural change contributed significantly to Jair Bolsonaro's rise to power. At the same time, Bolsonaro's economically liberal appeals resonated with workers embedded in increasingly industrialized, export-oriented agriculture. Therefore, Bolsonaro garnered support from the winners and losers of structural transformation simultaneously. This highlights the role of economic liberalist appeals distinct to the radical right in the Global South.</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="rule--thin">
+
+          <div class="section-block">
+            <h2 class="section">Work in Progress</h2>
+            <div class="paper">
+              <p class="paper-title">The right angle: Urban structures, social ties, and voting behavior in Serbia (with Valentina Petrovi&#263;)</p>
+              <p class="paper-venue">Draft in progress.</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">Rising illiberalism challenges many democracies today. A large body of literature demonstrates that discontent with structural economic change fuels support for illiberal politicians. However, this literature is partly incomplete on several accounts. First, it focuses on perceptions and processes of economic decline, ignoring the economic ascent that preceded the decline. Second, it neglects the role of physical structures, i.e., the built environment, that structural change creates and leaves behind. The layout of urban space, settlement patterns, and industrial building complexes themselves are all heavily influenced by economic activity. Therefore, economic activity shapes who interacts with whom and what people see in their everyday lives through physical structures in the long run. Third, most theorizing assumes either an individual-level perspective or a higher geographic level of aggregation. Characteristics of fine-grained meso-level units like neighborhoods are rarely explicitly considered. We aim to address all three of those points by asking: How does industrial legacy affect contemporary political behavior through physical structures on the neighborhood level? We investigate the case of Trstenik, a Serbian town that rapidly industrialized during the Socialist Federal Republic of Yugoslavia. Rapid industrialization transformed the rural town into an industrial hub. This came with radical changes in the built environment. Large manufacturing complexes were built, and entirely new worker colonies were erected within a short time. This reshaping created neighborhoods across the town today that are qualitatively different, in theoretically meaningful ways, some characterized by homogenous units and gridded blocks, some more heterogeneous. Moreover, large parts of the former factory are in ruins, exposing some neighborhoods to a visual reminder of economic decline, while other neighborhoods overlook the still functioning part of the factory. We expect that homogenous, gridded neighborhoods facilitate the formation of distinct social network patterns that shape how the perceived economic reality translates into political behavior. We first consider demographic sorting, where small, standardized units lead to more homogenous, less affluent neighborhoods in the former worker colonies. Next, we consider socialization and networks. Gridded urban structures reduce social interactions, hinder the flow of political information, and prevent citizens from forming politically valuable connections. Moreover, demographic homogeneity particularly reduces social interactions with citizens from different social groups or backgrounds. Finally, we consider the aesthetic experience of the built environment. Citizens exposed to visual cues about economic decline in their everyday lives should be more prone to develop grievances. However, such grievances should be moderated or exacerbated by social networks. We employ a mixed-methods approach that combines qualitative fieldwork, archival research, and large-N geo-coded face-to-face interviews. From semi-structured interviews and archival work, we can trace the trajectory of Trstenik's industrial development, from the rapid boom after WWII, to the breakdown in the 1990s, a phase of struggle and failed attempts to privatize, until a partial buyout by a collective of factory workers in 2016. Mapping this process is important to understand where, when, and how existing structures were altered, or new ones were added, and in which theoretical categories the neighborhoods fit. Moreover, the interviews help us to understand the micro-cosms that developed in the physically different types of neighborhoods. Geo-coded survey data then allows us to relate political behavior, political preferences, and information about identities, social ties, and cultural capital to neighborhood-level experiences shaped by the built environment. Our research contributes toward a more nuanced understanding of how economic change interacts with culture to impact support for illiberal politics.</p>
+              </div>
+            </div>
+            <div class="paper">
+              <p class="paper-title">The fatal tension between structural transformation and embedded liberalism</p>
+              <p class="paper-venue">Draft in progress.</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">Structural transformations like globalization have put a strain on embedded liberalism. A substantive literature asserts that economic grievances directly or indirectly contribute to the success of illiberal political actors hinting at a failure of embedded liberalism. This puts liberal democracy under threat. Strikingly, much of the literature models structural transformations as individual shocks. However, structural transformations are by their very nature not single shocks but gradual processes. When modelling structural transformation as a sequential process in which compensating losers of change secures a democratically legitimate majority at each step of the sequence, a surprising result appears. It is entirely possible that at any point after 2 or more steps of the sequence a democratically legitimate majority prefers the status quo, even though each step in between had majority support. We formally characterize the institutional parameters and features of transformations under which such a situation can arise. Finally, we propose voting rules that consider &ldquo;temporal fairness&rdquo; to help avoid ending up in an illegitimate terminal state, providing a blueprint of how embedded liberalism could work in the face of disruptive change.</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="rule--thin">
+
+          <div class="section-block">
+            <h2 class="section">Policy Papers</h2>
+            <div class="paper">
+              <p class="paper-title"><a href="https://www.ifo.de/publikationen/2020/aufsatz-zeitschrift/stabile-demokratie-krisenzeiten-lokale-coronafaelle-haben">Stabile Demokratie in Krisenzeiten: Lokale Coronaf&auml;lle haben bei der bayerischen Kommunalwahl die W&auml;hler nicht abgeschreckt</a> (with Sebastian Blesse and Felix R&ouml;sel, ifo Dresden berichtet 3/2020)</p>
+              <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">&#9660;</span></button>
+              <div class="abstract-body">
+                <p class="paper-abstract">A short policy report &mdash; in German &mdash; about the impact of the first occurrences of Covid-19 during the municipal elections in Bavaria on electoral outcomes. Comparing changes of electoral outcomes within municipalities with and without Covid-19 cases, we do not find any evidence that voters were abstaining due to local Covid-19 incidence.</p>
+                <p class="paper-abstract">Am 15. M&auml;rz 2020 fanden in Bayern die Kommunalwahlen statt &ndash; mitten in den Anfangswochen der Coronapandemie in Deutschland. In etwa einem F&uuml;nftel der bayerischen Landkreise gab es zu diesem Zeitpunkt aber noch keinen best&auml;tigten Coronafall. Wir vergleichen das Wahlverhalten in diesen Landkreisen mit bayerischen Landkreisen, in denen bereits Corona nachgewiesen wurde. Unsere Ergebnisse deuten nicht darauf hin, dass lokale Coronaf&auml;lle die Wahlbeteiligung negativ beeinflusst haben. Die W&auml;hler haben sich nicht abschrecken lassen.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
 
-    <h3>Book contributions</h3>
-
-    <div class="paper">
-      <p class="paper-title">The far right in Latin America: Between political illiberalism and neoliberalism</p>
-      <p class="paper-venue">Forthcoming chapter in edited volume (2026) "Handbuch Radikale und Populistische Rechte" (eds.: Jörg Flecker, Elke Gaugele, Georg Gläser, Gudrun Hentges and Ruth Wodak; Springer). Draft available on request. <a href="supplement_far_right_in_latam.html">Online supplement ↗</a></p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">This chapter argues that the rise of the far right is a global phenomenon. It characterizes far-right rhetoric, policy positions, and ideologies through a comparative lens, focusing on Latin America against the backdrop of the United States and Europe. It proposes a group-based model of far-right politics, in which the far right is understood as the political representation of dominant socio-cultural in-groups that antagonize out-groups. Since illiberalism, i.e., the rejection of pluralism, consolidates the social dominance of the in-group, it is the universal constitutive feature of the far right across contexts. Other common ideological traits of the far right, such as nativism, nationalism, conservatism, xenophobia, religious fundamentalism, or anti-elitism, divide the in-group from out-groups but depend on context. Further, instrumental characteristics, e.g., authoritarianism, law and order, economic liberalism, and militarism, preserve or foster in-group dominance, but manifest differently depending on the group divide. The group perspective thus resolves apparent contradictions opposing a global view on the far-right phenomenon. For example, it is not contradictory that far-right politicians in Latin America are economically liberal and pro-trade, while their US counterparts impose sweeping tariffs. Both cases follow the same illiberal logic, yet the differing interests of the socio-cultural in-group shape the choice of instrumental policy paradigms.</p>
+      <div class="grid footer">
+        <hr class="rule rule--thin">
+        <p>
+          <span>&copy; Philipp Kerler</span>
+          <span>University of Z&uuml;rich &middot; IPZ</span>
+        </p>
       </div>
-    </div>
 
-    <hr>
-    <h2>Working Papers</h2>
-
-    <div class="paper">
-      <p class="paper-title"><a href="https://ssrn.com/abstract=6209232">Gripezinha: Evidence for retrospective voting amid government misinformation</a> (with Victor Araújo)</p>
-      <p class="paper-venue">R&R at European Journal of Political Economy</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">Do voters punish rulers who spread misinformation when confronted with the truth? We address this question through the lens of the Covid-19 pandemic in Brazil. Despite a massive misinformation campaign in an already polarized society, Bolsonaro lost the elections in 2022. We argue that markers of the true state of the world, i.e., unambiguous evidence that contradicts governmental misinformation, expose the government as dishonest. Since citizens dislike dishonest politicians, misinformation can backfire electorally. We show that voters in polling stations closer to hospitals with more intensive care units (ICUs), which proxy for salient markers of the true state of the world, punished Bolsonaro more in the 2022 Presidential Election. The effect is sizeable — if information exposure had been 5 points lower (on a 10-point scale) the election result would be flipped.</p>
-      </div>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">Seeds of change: Structural Transformations and Support for the Radical Right (with David Doyle and Victor Araújo)</p>
-      <p class="paper-venue">Draft available on request.</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">The rise of the radical right is often attributed to economic disappointments rooted in structural transformations. However, these explanations frequently fail to extend beyond advanced democracies, where most structural changes differ. To advance the limited understanding of the political effects of structural transformations in countries of the Global South, we study the shift to high-intensity agricultural production in Brazil in the early 2000s. We argue that — similar to developments in advanced democracies — left majoritarian parties (in this case the Brazilian Workers' Party, PT) losing the support of those left behind by structural change contributed significantly to Jair Bolsonaro's rise to power. At the same time, Bolsonaro's economically liberal appeals resonated with workers embedded in increasingly industrialized, export-oriented agriculture. Therefore, Bolsonaro garnered support from the winners and losers of structural transformation simultaneously. This highlights the role of economic liberalist appeals distinct to the radical right in the Global South.</p>
-      </div>
-    </div>
-
-    <hr>
-    <h2>Work in Progress</h2>
-
-    <div class="paper">
-      <p class="paper-title">The right angle: Urban structures, social ties, and voting behavior in Serbia (with Valentina Petrović)</p>
-      <p class="paper-venue">Draft in progress.</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">Rising illiberalism challenges many democracies today. A large body of literature demonstrates that discontent with structural economic change fuels support for illiberal politicians. However, this literature is partly incomplete on several accounts. First, it focuses on perceptions and processes of economic decline, ignoring the economic ascent that preceded the decline. Second, it neglects the role of physical structures, i.e., the built environment, that structural change creates and leaves behind. The layout of urban space, settlement patterns, and industrial building complexes themselves are all heavily influenced by economic activity. Therefore, economic activity shapes who interacts with whom and what people see in their everyday lives through physical structures in the long run in the long run. Third, most theorizing assumes either an individual-level perspective or a higher geographic level of aggregation. Characteristics of fine-grained meso-level units like neighborhoods are rarely explicitly considered. We aim to address all three of those points by asking: How does industrial legacy affect contemporary political behavior through physical structures on the neighborhood level? We investigate the case of Trstenik, a Serbian town that rapidly industrialized during the Socialist Federal Republic of Yugoslavia. Rapid industrialization transformed the rural town into an industrial hub. This came with radical changes in the built environment. Large manufacturing complexes were built, and entirely new worker colonies were erected within a short time. This reshaping created neighborhoods across the town today that are qualitatively different, in theoretically meaningful ways, some characterized by homogenous units and gridded blocks, some more heterogeneous. Moreover, large parts of the former factory are in ruins, exposing some neighborhoods to a visual reminder of economic decline, while other neighborhoods overlook the still functioning part of the factory. We expect that homogenous, gridded neighborhoods facilitate the formation of distinct social network patterns that shape how the perceived economic reality translates into political behavior. We first consider demographic sorting, where small, standardized units lead to more homogenous, less affluent neighborhoods in the former worker colonies. Next, we consider socialization and networks. Gridded urban structures reduce social interactions, hinder the flow of political information, and prevent citizens from forming politically valuable connections. Moreover, demographic homogeneity particularly reduces social interactions with citizens from different social groups or backgrounds. Finally, we consider the aesthetic experience of the built environment. Citizens exposed to visual cues about economic decline in their everyday lives should be more prone to develop grievances. However, such grievances should be moderated or exacerbated by social networks. We employ a mixed-methods approach that combines qualitative fieldwork, archival research, and large-N geo-coded face-to-face interviews. From semi-structured interviews and archival work, we can trace the trajectory of Trstenik's industrial development, from the rapid boom after WWII, to the breakdown in the 1990s, a phase of struggle a failed attempts to privatize, until a partial buyout by a collective of factory workers in 2016. Mapping this process is important to understand where, when, and how existing structures were altered, or new ones were added, and in which theoretical categories the neighborhoods fit. Moreover, the interviews help us to understand the micro-cosms that developed in the physically different types of neighborhoods. Geo-coded survey data then allows us to relate political behavior, political preferences, and information about identities, social ties, and cultural capital to neighborhood-level experiences shaped by the built environment. Our research contributes toward a more nuanced understanding of how economic change interacts with culture to impact support for illiberal politics.</p>
-      </div>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">The fatal tension between structural transformation and embedded liberalism</p>
-      <p class="paper-venue">Draft in progress.</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">Structural transformations like globalization have put a strain on embedded liberalism. A substantive literature asserts that economic grievances directly or indirectly contribute to the success of illiberal political actors hinting at a failure of embedded liberalism. This puts liberal democracy under threat. Strikingly, much of the literature models structural transformations as individual shocks. However, structural transformations are by their very nature not single shocks but gradual processes. When modelling structural transformation as a sequential process in which compensating losers of change secures a democratically legitimate majority at each step of the sequence, a surprising result appears. It is entirely possible that at any point after 2 or more steps of the sequence a democratically legitimate majority prefers the status quo, even though each step in between had majority support. We formally characterize the institutional parameters and features of transformations under which such a situation can arise. Finally, we propose voting rules that consider "temporal fairness" to help avoid ending up in an illegitimate terminal state, providing a blueprint of how embedded liberalism could work in the face of disruptive change.</p>
-      </div>
-    </div>
-
-    <hr>
-    <h2>Policy Papers</h2>
-
-    <div class="paper">
-      <p class="paper-title"><a href="https://www.ifo.de/publikationen/2020/aufsatz-zeitschrift/stabile-demokratie-krisenzeiten-lokale-coronafaelle-haben">Stabile Demokratie in Krisenzeiten: Lokale Coronafälle haben bei der bayerischen Kommunalwahl die Wähler nicht abgeschreckt</a> (with Sebastian Blesse and Felix Rösel, ifo Dresden berichtet 3/2020)</p>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract <span class="arrow">▼</span></button>
-      <div class="abstract-body">
-        <p class="paper-abstract">A short policy report — in German — about the impact of the first occurrences of Covid-19 during the municipal elections in Bavaria on electoral outcomes. Comparing changes of electoral outcomes within municipalities with and without Covid-19 cases, we do not find any evidence that voters were abstaining due to local Covid-19 incidence.</p>
-        <p class="paper-abstract" style="margin-top: 0.5rem;">Am 15. März 2020 fanden in Bayern die Kommunalwahlen statt – mitten in den Anfangswochen der Coronapandemie in Deutschland. In etwa einem Fünftel der bayerischen Landkreise gab es zu diesem Zeitpunkt aber noch keinen bestätigten Coronafall. Wir vergleichen das Wahlverhalten in diesen Landkreisen mit bayerischen Landkreisen, in denen bereits Corona nachgewiesen wurde. Unsere Ergebnisse deuten nicht darauf hin, dass lokale Coronafälle die Wahlbeteiligung negativ beeinflusst haben. Die Wähler haben sich nicht abschrecken lassen.</p>
-      </div>
     </div>
 
     <script>
@@ -243,6 +358,5 @@
         btn.classList.toggle('open', !isOpen);
       }
     </script>
-
   </body>
 </html>
