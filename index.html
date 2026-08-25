@@ -1,183 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Philipp Kerler">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter:ital@0;1&display=swap" rel="stylesheet">
+    <title>Philipp Kerler</title>
     <style>
+      :root {
+        --red: #D6401E;
+        --ink: #111111;
+        --line: #111111;
+        --paper: #FDFDFC;
+        --col-gap: 20px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { -webkit-text-size-adjust: 100%; }
+
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 15px;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem;
-        color: #222;
+        line-height: 1.5;
+        color: var(--ink);
+        background: var(--paper);
+        margin: 0;
+        padding: 0;
       }
 
       a {
+        color: var(--ink);
         text-decoration: none;
-        color: #EB5406;
+      }
+      a:hover { color: var(--red); }
+      a:focus { color: var(--red); }
+
+      /* ---------- Grid shell ---------- */
+      .sheet {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 40px 32px 64px;
       }
 
-      a:hover {
-        color: #40484A;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: var(--col-gap);
       }
 
-      a:focus {
-        color: #EB5406;
-      }
-
-      .round-image {
-        border-radius: 50%;
-        overflow: hidden;
-        width: 160px;
-        height: 160px;
-      }
-
-      .round-image img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-
-      .header-layout {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .header-left {
-        text-align: left;
-        flex: 2;
-      }
-
-      .header-left h1 {
-        font-family: 'Lora', serif;
-        font-weight: 500;
-        margin: 0 0 0.4rem;
-        font-size: 52px;
-        line-height: 1.1;
-      }
-
-      .header-left .subtitle {
-        margin: 0 0 0.75rem;
-        font-size: 15px;
-        line-height: 1.5;
-        color: #555;
-      }
-
-      .header-left small {
-        font-size: 13px;
-        color: #888;
-        line-height: 1.7;
-        display: block;
-      }
-
-      .header-right {
-        flex: 0 0 160px;
-        text-align: center;
-      }
-
-      hr {
+      .rule {
+        grid-column: 1 / -1;
         border: none;
-        border-top: 0.5px solid #ddd;
-        margin: 1.25rem 0;
+        border-top: 3px solid var(--line);
+        margin: 0;
+      }
+      .rule--thin {
+        border-top: 1px solid #cfcfcf;
       }
 
-      .nav-links {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 0.75rem;
-        margin: 1rem 0;
+      /* ---------- Masthead ---------- */
+      .masthead {
+        padding: 36px 0 28px;
+        align-items: start;
+        row-gap: 22px;
       }
 
-      .nav-links a {
-        font-size: 14px;
+      .name {
+        grid-column: 1 / 9;
+        font-size: clamp(40px, 6vw, 68px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 0.98;
+        margin: 0;
+      }
+
+      .portrait img {
+        display: block;
+        width: 64%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(1.05);
+      }
+
+      .role {
+        grid-column: 1 / 9;
+        font-size: 16px;
         font-weight: 500;
-        color: #222;
-        padding: 6px 16px;
-        border: 0.5px solid #bbb;
-        border-radius: 99px;
+        line-height: 1.4;
+        margin: 0;
       }
 
-      .nav-links a:hover {
-        background: #f5f5f5;
-        color: #EB5406;
-        border-color: #EB5406;
+      .contact {
+        grid-column: 10 / 13;
+        font-size: 12px;
+        line-height: 1.7;
+        color: var(--ink);
+        margin: 0;
+        text-align: right;
+      }
+      .contact a { color: var(--ink); }
+      .contact a:hover { color: var(--red); }
+
+      /* ---------- Nav ---------- */
+      .nav {
+        padding: 18px 0;
+        align-items: baseline;
+      }
+      .nav a {
+        grid-row: 1;
+        justify-self: start;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .nav a:nth-child(1) { grid-column: 1 / 4; }
+      .nav a:nth-child(2) { grid-column: 4 / 6; }
+      .nav a:nth-child(3) { grid-column: 6 / 9; }
+
+      /* ---------- Body copy: irregular 2x2 table ---------- */
+      .content {
+        padding-top: 36px;
+        row-gap: 40px;
       }
 
-      .text-section {
-        text-align: left;
+      .cell {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .cell--tl { grid-column: 1 / 8; grid-row: 1; }
+      .cell--tr { grid-column: 8 / 13; grid-row: 1; }
+      .cell--bl { grid-column: 1 / 8; grid-row: 2; }
+      .cell--br { grid-column: 8 / 13; grid-row: 2; }
+
+      .lede {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.35;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+
+      .body-text {
+        font-size: 15px;
         line-height: 1.75;
+        color: var(--ink);
+        margin: 0;
       }
 
-      .text-section p {
-        margin-bottom: 1rem;
+      /* ---------- Footer ---------- */
+      .footer {
+        padding-top: 40px;
+        margin-top: 40px;
+      }
+      .footer .rule--thin { margin-bottom: 16px; }
+      .footer p {
+        grid-column: 1 / 13;
+        font-size: 11px;
+        color: var(--ink);
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
       }
 
-      .text-section p:first-child {
-        font-family: 'Lora', serif;
-        font-size: 17px;
-        color: #666;
+      /* ---------- Responsive ---------- */
+      @media (max-width: 640px) {
+        .sheet { padding: 24px 20px 48px; }
+        .name, .role, .contact { grid-column: 1 / 13; }
+        .contact { text-align: left; margin-top: 4px; }
+        .nav a:nth-child(1),
+        .nav a:nth-child(2),
+        .nav a:nth-child(3) { grid-column: 1 / 13; grid-row: auto; }
+        .nav { row-gap: 10px; }
+        .cell--tl, .cell--tr, .cell--bl, .cell--br { grid-column: 1 / 13; }
+        .cell--tl { grid-row: 1; }
+        .cell--tr { grid-row: 2; }
+        .cell--bl { grid-row: 3; }
+        .cell--br { grid-row: 4; }
+        .portrait img { width: 64%; max-width: 128px; aspect-ratio: 1 / 1; }
       }
     </style>
-
-    <title>Philipp Kerler</title>
   </head>
   <body>
-    <div class="header-layout">
-      <div class="header-left">
-        <h1>Philipp Kerler</h1>
-        <div class="subtitle">
-          Post-doc, Department of Political Science (IPZ)<br>
-          University of Zürich
-        </div>
-        <small>
-         philipp.kerler@uzh.ch<br>
-          Affolternstrasse 56, 8050 Zürich · AFL-H-342
-        </small>
+    <div class="sheet">
+
+      <div class="grid masthead">
+        <h1 class="name">Philipp<br>Kerler</h1>
+        <p class="role">Post&#8209;doc, Department of<br>Political Science (IPZ)<br>University of Z&uuml;rich</p>
+        <p class="contact">
+          philipp.kerler@uzh.ch<br>
+          Affolternstrasse&nbsp;56<br>
+          8050&nbsp;Z&uuml;rich &middot; AFL&#8209;H&#8209;342
+        </p>
       </div>
 
-      <div class="header-right">
-        <div class="round-image">
+      <hr class="rule">
+
+      <nav class="grid nav">
+        <a href="research.html">Research</a>
+        <a href="assets/CV_25082026.pdf">CV</a>
+        <a href="PEFRSGSv2+(3) (1).pdf">Seminar</a>
+      </nav>
+
+      <hr class="rule">
+
+      <div class="grid content">
+        <div class="cell cell--tl">
+          <p class="lede">Welcome.</p>
+          <p class="body-text">
+            My research connects Political Economy, Comparative Politics, and
+            Development.
+          </p>
+        </div>
+
+        <div class="cell cell--tr portrait">
           <img src="assets/kerler.jpg" alt="Philipp Kerler">
         </div>
+
+        <div class="cell cell--bl">
+          <p class="body-text">
+            Currently, I focus on the political effects of structural
+            transformations &mdash; especially how they relate to the rise of
+            the far right in non&#8209;WEIRD (Western Educated Industrialized
+            Rich Democratic) countries. Structural economic explanations are at
+            the heart of theories explaining this phenomenon in advanced
+            Western democracies, yet we observe the same political outcomes in
+            some of the largest democracies in the world, where structural
+            transformations are substantially different from those in Europe
+            or the US. So why do we see similar political outcomes, even
+            though the explanatory variable changes?
+          </p>
+        </div>
+
+        <div class="cell cell--br">
+          <p class="body-text">
+            I seek to contribute on theoretical and empirical grounds, as I
+            believe in a strong complementarity between both. To structure my
+            theoretical thinking, I often resort to formal modeling. In my
+            empirical work, I use quantitative methods to analyze a wide range
+            of data. Being trained in Political Science and Economics, I
+            aspire to foster the growing connection between both fields.
+          </p>
+        </div>
       </div>
+
+      <div class="grid footer">
+        <hr class="rule rule--thin">
+        <p>
+          <span>&copy; Philipp Kerler</span>
+          <span>University of Z&uuml;rich &middot; IPZ</span>
+        </p>
+      </div>
+
     </div>
-
-    <hr>
-
-    <div class="nav-links">
-      <a href="research.html">Research</a>
-      <a href="assets/CV_25082026.pdf">CV</a>
-      <a href="PEFRSGSv2+(3) (1).pdf">Seminar</a>
-    </div>
-
-    <hr>
-
-    <div class="text-section">
-      <p>Welcome!</p>
-      <p>My research connects Political Economy, Comparative Politics, and Development.</p>
-      <p>
-        Currently, I focus on the political effects of structural transformations —
-        especially how they relate to the rise of the far right in non-WEIRD
-        (Western Educated Industrialized Rich Democratic) countries. Structural economic
-        explanations are at the heart of theories explaining this phenomenon in advanced
-        Western democracies, yet we observe the same political outcomes in some of the largest
-        democracies in the world, where structural transformations are substantially different
-        from those in Europe or the US. So why do we see similar political outcomes, even though the explanatory variable changes? 
-      </p>
-          <p>
-        I seek to contribute on theoretical and empirical grounds, as I believe in a
-        strong complementarity between both. To structure my theoretical thinking, I
-        often resort to formal modeling. In my empirical work, I use quantitative methods
-        to analyze a wide range of data. Being trained in Political Science and Economics, I aspire to foster the growing connection between both fields. 
-                     <p>
+  </body>
+</html>
